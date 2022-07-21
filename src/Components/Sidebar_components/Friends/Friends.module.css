@@ -1,0 +1,12 @@
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.persons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
