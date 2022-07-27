@@ -1,12 +1,11 @@
 import React from 'react';
 import style from './Posts.module.css'
+import Post from "./Post/Post";
 
-const Posts = () => {
+const Posts = (props) => {
     return (
         <div className={style.postsWrap}>
-            <div>
-
-            </div>
+                {props.posts.map(p => <Post post={p}/>)}
         </div>
     );
 };

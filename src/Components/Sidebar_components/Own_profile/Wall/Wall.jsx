@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Wall.module.css'
 import Posts from "./Posts/Posts";
 
-const Wall = () => {
+const Wall = (props) => {
     return (
             <div className={style.wall}>
                 <div className={style.add}>
@@ -14,8 +14,8 @@ const Wall = () => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <Posts/>
+                <div className={style.posts}>
+                    <Posts posts={props.posts}/>
                 </div>
             </div>
     );

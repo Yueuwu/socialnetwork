@@ -5,11 +5,11 @@ import Dialogs from "../Sidebar_components/Dialogs/Dialogs";
 import Profile from "../Sidebar_components/Own_profile/Profile";
 
 const Content = (props) => {
-    return (
+        return (
             <div className={style.content}>
                 <Routes>
-                    <Route path='/profile' element={<Profile/>}/>
-                    <Route path='/dialogs/*' element={<Dialogs dialogs={props.dialogs}/>}/>
+                    <Route path='/profile' element={<Profile state={props.state}/>}/>
+                    <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsData}/>}/>
                 </Routes>
             </div>
     );

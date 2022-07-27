@@ -1,7 +1,8 @@
 .postsWrap{
     display: flex;
-
     justify-content: center;
+    background-color: #b8b8d2;
+    padding-bottom: 25px;
+    flex-wrap: wrap;
 }
-
 

@@ -5,6 +5,7 @@ import Message from "./Messages/Message";
 
 const Dialogs = (props) => {
     let dialogsData = props.dialogs
+    console.log("Di", dialogsData);
     let ges = ['hui', 'nehui', 'opa', 'dagnropa', 'hui', 'nehui', 'opa', 'dagnropa', 'hui', 'nehui', 'opa', 'dagnropa', 'hui', 'nehui', 'opa', 'dagnropa', 'hui', 'nehui', 'opa', 'dagnropa', 'hui', 'nehui', 'opa', 'dagnropa']
     return (
         <div className={style.dialogs}>
@@ -13,7 +14,6 @@ const Dialogs = (props) => {
             </div>
             <div className={style.mes}>
                 {ges.map(m => <Message message={m}/>)}
-
             </div>
         </div>
     );

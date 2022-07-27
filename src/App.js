@@ -5,10 +5,10 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import {BrowserRouter} from "react-router-dom";
 
 function App(props) {
-  return (
+    return (
           <div className="App">
               <BrowserRouter>
-                  <Content dialogs={props.state.dialogsData}/>
+                  <Content state={props.state}/>
                   <Sidebar state={props.state.dialogsData}/>
               </BrowserRouter>
           </div>
