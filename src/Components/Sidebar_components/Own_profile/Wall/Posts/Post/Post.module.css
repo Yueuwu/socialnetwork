@@ -15,9 +15,36 @@
     font-weight: 450;
 }
 .likesWrap{
-    border: 1px solid #000;
-    padding: 10px;
+    border: 1px solid #a9a9bd;
+    padding: 0 10px 10px 10px;
+    border-radius: 20px;
+    background: #cfcfe5;
+    width: 50px;
+    height: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.likesWrap:hover{
+    background: #eeeef5;
+    cursor: pointer;
 }
 .likes{
+    margin-left: 5px;
+}
+.imgWrap{
 
+}
+.img{
+    max-height: 12px;
+}
+.body::selection{
+    color: #9b9dd0; /* Цвет текста */
+    background: #fdfdfd;
 }

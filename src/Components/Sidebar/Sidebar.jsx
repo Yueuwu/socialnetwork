@@ -9,7 +9,7 @@ const Sidebar = (props) => {
             <div className={style.wrap}>
                 <div className={style.el}>
                     <Link className={style.el} to="/profile">
-                        <img className={style.imgs} src="https://cdn-icons.flaticon.com/png/512/2734/premium/2734847.png?token=exp=1658282495~hmac=58b47803c7161ecde81abe25861c44c2" alt=""/>
+                        <img className={style.imgs} src="https://cdn-icons.flaticon.com/png/512/1144/premium/1144760.png?token=exp=1660533324~hmac=753272ab4bdbf9e013bf96e5e46c353a" alt=""/>
                     </Link>
                 </div>
                 <div className={style.el}>

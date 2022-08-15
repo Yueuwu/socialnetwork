@@ -14,7 +14,7 @@ const State = {
         {body: "It is my second post :)))))", likes: 98},
         {body: "It is my third post!!! ;))", likes: 87},
         {body: "Sad :(", likes: 91},
-        {body: "Cucumber is so nice in my ass!", likes: 127}
+        {body: "Cucumber is so nice in my ass!", likes: 127000000000}
     ]
 
 }
