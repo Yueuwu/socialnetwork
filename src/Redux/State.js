@@ -10,11 +10,17 @@ const State = {
         {name: 'Masha', id: 'Masha'},
     ],
     posts: [
-        {body: "It is my first post!!!", likes: 101},
-        {body: "It is my second post :)))))", likes: 98},
-        {body: "It is my third post!!! ;))", likes: 87},
-        {body: "Sad :(", likes: 91},
-        {body: "Cucumber is so nice in my ass!", likes: 127000000000}
+        {id: 1, body: "It is my first post!!!", likes: 101},
+        {id: 2,body: "It is my second post :)))))", likes: 98},
+        {id: 3,body: "It is my third post!!! ;))", likes: 87},
+        {id: 4,body: "Sad :(", likes: 91},
+        {id: 5,body: "Cucumber is so nice in my ass!", likes: 127000000000}
+    ],
+    messages: [
+        {id: 1, message: 'hui'},
+        {id: 2, message: 'nehui'},
+        {id: 3, message: 'opa'},
+        {id: 4, message: 'dagnropa'}
     ]
 
 }

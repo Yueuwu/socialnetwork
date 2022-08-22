@@ -9,7 +9,7 @@ const Content = (props) => {
             <div className={style.content}>
                 <Routes>
                     <Route path='/profile' element={<Profile state={props.state}/>}/>
-                    <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsData}/>}/>
+                    <Route path='/dialogs/*' element={<Dialogs dialogs={props.state}/>}/>
                 </Routes>
             </div>
     );

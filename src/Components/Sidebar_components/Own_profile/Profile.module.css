@@ -11,5 +11,24 @@
             "wall wall wall wall wall wall wall"
             "wall wall wall wall wall wall wall"
 }
-
+.wrapper::-webkit-scrollbar {
+    width: 17px;
+    background-color: #e3e3ec;
+    border-radius: 100px;
+}
+.wrapper::-webkit-scrollbar-track {
+    background-color: #e3e3ec;
+    border-radius: 100px;
+}
+.wrapper::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 6px solid #7779A1;
+    border-left: 0;
+    border-right: 0;
+    background-color: #7779A1;
+}
+.wrapper::-webkit-scrollbar-thumb:hover {
+    border: 6px solid #5c5e93;
+    background-color: #5c5e93;
+}
 
