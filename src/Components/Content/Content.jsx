@@ -8,7 +8,7 @@ const Content = (props) => {
         return (
             <div className={style.content}>
                 <Routes>
-                    <Route path='/profile' element={<Profile state={props.state}/>}/>
+                    <Route path='/profile' element={<Profile addPost={props.addPost} state={props.state}/>}/>
                     <Route path='/dialogs/*' element={<Dialogs dialogs={props.state}/>}/>
                 </Routes>
             </div>

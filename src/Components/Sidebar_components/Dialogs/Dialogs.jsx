@@ -15,7 +15,7 @@ const Dialogs = (props) => {
             <div className={style.mes}>
                 {messages.map(m => <Message message={m.message}/>)}
             </div>
-            <div>
+            <div className={style.send}>
                 <SendMessage/>
             </div>
         </div>

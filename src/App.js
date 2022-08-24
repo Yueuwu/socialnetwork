@@ -8,7 +8,7 @@ function App(props) {
     return (
           <div className="App">
               <BrowserRouter>
-                  <Content state={props.state}/>
+                  <Content addPost={props.addPost} state={props.state}/>
                   <Sidebar state={props.state.dialogsData}/>
               </BrowserRouter>
           </div>

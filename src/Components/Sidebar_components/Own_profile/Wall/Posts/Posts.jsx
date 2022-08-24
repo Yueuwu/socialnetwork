@@ -3,9 +3,9 @@ import style from './Posts.module.css'
 import Post from "./Post/Post";
 
 const Posts = (props) => {
-
     const addPost = (e) => {
         let text = e.target.value;
+        props.addPost(text)
     }
 
     return (
@@ -15,7 +15,7 @@ const Posts = (props) => {
                 <div className={style.typesome}>Write something</div>
                 <input onInput={addPost} className={style.input}/>
                 <div className={style.btnWrap}>
-                    <button onClick={()=>{alert('fdsf')}} className={style.btn}>Post</button>
+                    <button  className={style.btn}>Post</button>
                 </div>
             </div>
         </div>
