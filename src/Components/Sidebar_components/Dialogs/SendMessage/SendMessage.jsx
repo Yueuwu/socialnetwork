@@ -1,10 +1,12 @@
 import React from 'react';
 import style from './SendMessage.module.css'
 
-const SendMessage = () => {
-    const sendMessage = (e) => {
-        let text = e.target.value;
-        console.log(text);
+const SendMessage = (props) => {
+    let newText = React.createRef();
+    const addMessage = () => {
+        let text = newText.current.value;
+        props.addMessage(text);
+
     }
 
     return (
@@ -12,12 +14,12 @@ const SendMessage = () => {
             <div className={style.inputWrap}>
                 <input
                     className={style.input}
-                    onInput={sendMessage}
+                    ref={newText}
                 />
             </div>
             <button
                 className={style.btn}
-
+                onClick={addMessage}
             >Send</button>
         </div>
     );

@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../rerender";
+
 const State = {
     dialogsData: [
         {name: 'Vera', id:'Vera'},
@@ -55,13 +57,22 @@ const State = {
     ]
 
 }
-export let addPost = (postMessage) => {
+export let addPost = (postBody) => {
     let newPost = {
         id: Date.now(),
-        body: postMessage,
+        body: postBody,
         likes: 0
     };
-    State.posts.push(newPost)
+    State.posts.unshift(newPost)
+    rerenderEntireTree(State)
+}
+export let addMessage = (message) => {
+    let newMessage = {
+        id: Date.now(),
+        message: message,
+    };
+    State.messages.unshift(newMessage)
+    rerenderEntireTree(State)
 }
 
 export default State
