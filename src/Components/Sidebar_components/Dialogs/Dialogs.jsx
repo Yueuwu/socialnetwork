@@ -5,8 +5,9 @@ import Message from "./Messages/Message";
 import SendMessage from "./SendMessage/SendMessage";
 
 const Dialogs = (props) => {
-    let dialogsData = props.dialogs.dialogsData;
-    let messages = props.dialogs.messages;
+    let dialogsData = props.state.dialogsData;
+    let messages = props.state.messages;
+    console.log('Dilaogs',props.newMessageText);
     return (
         <div className={style.dialogs}>
             <div className={style.di}>
@@ -16,7 +17,7 @@ const Dialogs = (props) => {
                 {messages.map(m => <Message message={m.message}/>)}
             </div>
             <div className={style.send}>
-                <SendMessage addMessage={props.addMessage}/>
+                <SendMessage newMessageText={props.state.newMessageText} updateNewMessageText={props.updateNewMessageText} addMessage={props.addMessage}/>
             </div>
         </div>
     );

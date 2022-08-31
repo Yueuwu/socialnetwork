@@ -2,19 +2,23 @@ import React from 'react';
 import style from './SendMessage.module.css'
 
 const SendMessage = (props) => {
-    let newText = React.createRef();
+    console.log(props);
     const addMessage = () => {
-        let text = newText.current.value;
-        props.addMessage(text);
-
+        props.addMessage();
+    }
+    const updateText = (e) => {
+        let text = e.target.value;
+        props.updateNewMessageText(text)
     }
 
     return (
         <div className={style.wrapper}>
             <div className={style.inputWrap}>
                 <input
+                    autoFocus
                     className={style.input}
-                    ref={newText}
+                    onChange={updateText}
+                    value={props.newMessageText}
                 />
             </div>
             <button

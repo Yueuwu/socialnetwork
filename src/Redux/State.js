@@ -1,5 +1,4 @@
-import {rerenderEntireTree} from "../rerender";
-
+let rerenderEntireTree = () => {}
 const State = {
     dialogsData: [
         {name: 'Vera', id:'Vera'},
@@ -33,6 +32,8 @@ const State = {
         {id: 4,body: "Sad :(", likes: 91},
         {id: 5,body: "Cucumber is so nice in my ass!", likes: 127000000000},
     ],
+    newPostText: '',
+    newMessageText: '',
     messages: [
         {id: 1, message: 'hui'},
         {id: 2, message: 'nehui'},
@@ -57,22 +58,41 @@ const State = {
     ]
 
 }
-export let addPost = (postBody) => {
+export const addPost = () => {
     let newPost = {
         id: Date.now(),
-        body: postBody,
+        body: State.newPostText,
         likes: 0
     };
-    State.posts.unshift(newPost)
+    if(newPost.body.trim() !== '') {
+        State.posts.unshift(newPost)
+        rerenderEntireTree(State)
+        State.newPostText = ''
+    }
+}
+
+export const updateNewPostText = (newText) => {
+    State.newPostText = newText;
     rerenderEntireTree(State)
 }
-export let addMessage = (message) => {
+
+export const addMessage = (message) => {
     let newMessage = {
         id: Date.now(),
-        message: message,
+        message: State.newMessageText,
     };
-    State.messages.unshift(newMessage)
+    if(newMessage.message.trim() !== '') {
+        State.messages.unshift(newMessage)
+        rerenderEntireTree(State)
+        State.newMessageText = ''
+    }
+}
+export const updateNewMessageText = (newText) => {
+    State.newMessageText = newText;
     rerenderEntireTree(State)
+}
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer
 }
 
 export default State
