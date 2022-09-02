@@ -2,7 +2,6 @@ import React from 'react';
 import style from './SendMessage.module.css'
 
 const SendMessage = (props) => {
-    console.log(props);
     const addMessage = () => {
         props.addMessage();
     }
