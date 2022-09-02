@@ -4,11 +4,11 @@ import Post from "./Post/Post";
 
 const Posts = (props) => {
     const addPost = () => {
-        props.addPost();
+        props.dispatch({type: 'ADD_POST'});
     }
     const updateText = (e) => {
         let text = e.target.value;
-        props.updateNewPostText(text)
+        props.dispatch({type: 'UPDATE_NEW_POST_TEXT', newText: text})
     }
 
     return (
