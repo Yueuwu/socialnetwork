@@ -19,7 +19,7 @@ const Posts = (props) => {
                     <input
                         onChange={updateText}
                         className={style.input}
-                        value={props.state.newPostText}
+                        value={props.state.profilePage.newPostText}
                     />
                     <div className={style.btnWrap}>
                         <button onClick={addPost} className={style.btn}>Post</button>
@@ -27,7 +27,7 @@ const Posts = (props) => {
                 </div>
             </div>
             <div className={style.postsWrap}>
-                {props.state.posts.map(p => <Post post={p}/>)}
+                {props.state.profilePage.posts.map(p => <Post post={p}/>)}
             </div>
         </div>
     );
