@@ -56,6 +56,12 @@
     height: 30px;
     background-color: #d0d3e0;
     width: 30%;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .btn:hover{
     background-color: #dadff3;
