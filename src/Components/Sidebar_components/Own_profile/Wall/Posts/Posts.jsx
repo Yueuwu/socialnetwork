@@ -1,14 +1,17 @@
 import React from 'react';
 import style from './Posts.module.css'
 import Post from "./Post/Post";
+import {addPostActionCreator, updateTextActionCreator} from "../../../../../Redux/State";
+
+
 
 const Posts = (props) => {
     const addPost = () => {
-        props.dispatch({type: 'ADD_POST'});
+        props.dispatch(addPostActionCreator());
     }
     const updateText = (e) => {
         let text = e.target.value;
-        props.dispatch({type: 'UPDATE_NEW_POST_TEXT', newText: text})
+        props.dispatch(updateTextActionCreator(text))
     }
 
     return (
