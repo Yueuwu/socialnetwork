@@ -16,7 +16,7 @@ const Dialogs = (props) => {
                 {messages.map(m => <Message message={m.message}/>)}
             </div>
             <div className={style.send}>
-                <SendMessage newMessageText={props.state.dialogPage.newMessageText} updateNewMessageText={props.updateNewMessageText} addMessage={props.addMessage}/>
+                <SendMessage dispatch={props.dispatch} newMessageText={props.state.dialogPage.newMessageText}/>
             </div>
         </div>
     );

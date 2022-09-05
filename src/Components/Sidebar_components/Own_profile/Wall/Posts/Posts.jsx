@@ -13,6 +13,11 @@ const Posts = (props) => {
         let text = e.target.value;
         props.dispatch(updateTextActionCreator(text))
     }
+    const keyPress = (e) => {
+        if(e.keyCode === 13){
+            addPost()
+        }
+    }
 
     return (
         <div>
@@ -23,6 +28,7 @@ const Posts = (props) => {
                         onChange={updateText}
                         className={style.input}
                         value={props.state.profilePage.newPostText}
+                        onKeyDown={keyPress}
                     />
                     <div className={style.btnWrap}>
                         <button onClick={addPost} className={style.btn}>Post</button>
