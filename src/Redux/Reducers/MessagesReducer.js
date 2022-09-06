@@ -29,4 +29,11 @@ const messagesReducer = (state /*= initialState*/, action) => {
         default: return state
     }
 }
+
+export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
+export const updateMessageActionCreator = (text) => ({
+    type: UPDATE_NEW_MESSAGE_TEXT,
+    newMessageText: text
+})
+
 export default messagesReducer;
