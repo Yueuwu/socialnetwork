@@ -1,3 +1,6 @@
+import PostsReducer from "./Reducers/PostsReducer";
+import MessagesReducer from "./Reducers/MessagesReducer";
+
 const ADD_POST = 'ADD_POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
@@ -105,15 +108,9 @@ let store = {
         this._callSubscriber = observer
     },
     dispatch(action){
-        if(action.type === ADD_POST){
-            this._addPost()
-        } else if (action.type === UPDATE_NEW_POST_TEXT){
-            this._updateNewPostText(action.newText)
-        } else if(action.type === ADD_MESSAGE){
-            this._addMessage()
-        } else if(action.type === UPDATE_NEW_MESSAGE_TEXT){
-            this._updateNewMessageText(action.newMessageText)
-        }
+        this._state.profilePage = PostsReducer(this._state.profilePage, action)
+        this._state.dialogPage = MessagesReducer(this._state.dialogPage, action)
+        this._callSubscriber(this._state)
     }
 }
 export const addPostActionCreator = () => ({type: ADD_POST})

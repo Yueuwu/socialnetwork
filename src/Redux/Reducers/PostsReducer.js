@@ -12,7 +12,7 @@ let initialState = {
     newPostText: ''
 };
 
-const postsReducer = (state = initialState, action) => {
+const postsReducer = (state /*= initialState*/, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
@@ -20,8 +20,10 @@ const postsReducer = (state = initialState, action) => {
                 body: state.newPostText,
                 likes: 0
             };
-            state.posts.push(newPost);
-            state.newPostText = '';
+            if(newPost.body.trim() !== '') {
+                state.posts.unshift(newPost)
+                state.newPostText = ''
+            }
             return state;
         case UPDATE_NEW_POST_TEXT:
             state.newPostText = action.newText;
