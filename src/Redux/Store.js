@@ -1,6 +1,6 @@
 import {combineReducers, createStore} from "redux";
 import postsReducer from "./Reducers/PostsReducer";
-import messagesReducer from "./Reducers/MessagesReduser";
+import messagesReducer from "./Reducers/MessagesReducer";
 
 let reducers = combineReducers({
     postsReducer,
