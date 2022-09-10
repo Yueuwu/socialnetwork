@@ -12,7 +12,7 @@ let initialState = {
     newPostText: ''
 };
 
-const postsReducer = (state /*= initialState*/, action) => {
+const postsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
@@ -31,4 +31,10 @@ const postsReducer = (state /*= initialState*/, action) => {
         default: return state
     }
 }
+
+export const addPostActionCreator = () => ({type: ADD_POST})
+export const updateTextActionCreator = (text) => ({
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text})
+
 export default postsReducer;

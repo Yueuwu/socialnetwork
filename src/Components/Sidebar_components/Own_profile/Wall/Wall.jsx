@@ -7,7 +7,7 @@ const Wall = (props) => {
     return (
             <div className={style.wall}>
                 <div className={style.posts}>
-                    <Posts dispatch={props.dispatch} state={props.state}/>
+                    <PostsContainer dispatch={props.dispatch} state={props.state}/>
                 </div>
             </div>
     );

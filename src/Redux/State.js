@@ -1,12 +1,8 @@
 import PostsReducer from "./Reducers/PostsReducer";
 import MessagesReducer from "./Reducers/MessagesReducer";
 
-const ADD_POST = 'ADD_POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
-const ADD_MESSAGE = 'ADD_MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT'
-let store = {
+let Store = {
     _state: {
         profilePage: {
             posts: [
@@ -73,37 +69,6 @@ let store = {
     getState() {
         return this._state;
     },
-    _addPost(){
-        let newPost = {
-            id: Date.now(),
-            body: this._state.profilePage.newPostText,
-            likes: 0
-        };
-        if(newPost.body.trim() !== '') {
-            this._state.profilePage.posts.unshift(newPost)
-            this._callSubscriber(this._state)
-            this._state.profilePage.newPostText = ''
-        }
-    },
-    _updateNewPostText(newText){
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state)
-    },
-    _addMessage(message){
-        let newMessage = {
-            id: Date.now(),
-            message: this._state.dialogPage.newMessageText,
-        };
-        if(newMessage.message.trim() !== '') {
-            this._state.dialogPage.messages.unshift(newMessage)
-            this._callSubscriber(this._state)
-            this._state.dialogPage.newMessageText = ''
-        }
-    },
-    _updateNewMessageText(newText){
-        this._state.dialogPage.newMessageText = newText;
-        this._callSubscriber(this._state)
-    },
     subscribe(observer){
         this._callSubscriber = observer
     },
@@ -113,14 +78,7 @@ let store = {
         this._callSubscriber(this._state)
     }
 }
-export const addPostActionCreator = () => ({type: ADD_POST})
-export const updateTextActionCreator = (text) => ({
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text})
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE})
-export const updateMessageActionCreator = (text) => ({
-    type: UPDATE_NEW_MESSAGE_TEXT,
-    newMessageText: text
-})
 
-export default store
+
+
+export default Store
