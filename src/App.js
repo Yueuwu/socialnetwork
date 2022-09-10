@@ -10,7 +10,7 @@ function App(props) {
           <div className="App">
               <BrowserRouter>
                   <Content dispatch={props.dispatch}  state={props.state}/>
-                  <Sidebar state={props.state.dialogPage.dialogsData}/>
+                  <Sidebar state={props.state.messagesReducer.dialogsData}/>
               </BrowserRouter>
           </div>
   );

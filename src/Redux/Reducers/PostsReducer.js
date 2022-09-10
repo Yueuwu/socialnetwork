@@ -12,7 +12,7 @@ let initialState = {
     newPostText: ''
 };
 
-const postsReducer = (state /*= initialState*/, action) => {
+const postsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {

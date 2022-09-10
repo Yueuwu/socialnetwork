@@ -8,10 +8,20 @@ let initialState = {
         {id: 3, message: 'opa'},
         {id: 4, message: 'dagnropa'}
     ],
-    newMessageText: ''
+    newMessageText: '',
+    dialogsData: [
+        {name: 'Vera', id:'Vera'},
+        {name: 'Vlad', id:'Vlad'},
+        {name: 'Sasha', id:'Sasha'},
+        {name: 'Igor', id: 'Igor'},
+        {name: 'Vova', id: 'Vova'},
+        {name: 'Achyty', id: 'Achyty'},
+        {name: 'Nastya', id: 'Nastya'},
+        {name: 'Masha', id: 'Masha'},
+    ],
 }
 
-const messagesReducer = (state /*= initialState*/, action) => {
+const messagesReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
             let body = state.newMessageText;

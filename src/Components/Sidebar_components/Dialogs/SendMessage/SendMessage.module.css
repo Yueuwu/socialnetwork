@@ -3,6 +3,7 @@
     background-color: #9b9dd0;
     border-radius: 10px;
     height: 100%;
+    max-height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -15,6 +16,7 @@
     background-color: #9b9dd0;
     border-radius: 10px;
     padding: 15px;
+
 }
 .input{
     width: 100%;
