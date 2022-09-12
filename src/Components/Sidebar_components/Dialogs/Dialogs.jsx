@@ -5,7 +5,6 @@ import Message from "./Messages/Message";
 import SendMessage from "./SendMessage/SendMessage";
 
 const Dialogs = (props) => {
-
     let messages = props.messages;
     return (
         <div className={style.dialogs}>
