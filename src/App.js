@@ -9,7 +9,7 @@ function App(props) {
     return (
           <div className="App">
               <BrowserRouter>
-                  <Content dispatch={props.dispatch}  state={props.state}/>
+                  <Content store={props.store}/>
                   <Sidebar state={props.state.messagesReducer.dialogsData}/>
               </BrowserRouter>
           </div>

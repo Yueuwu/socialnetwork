@@ -3,13 +3,14 @@ import style from './Content.module.css';
 import {Routes, Route } from "react-router-dom";
 import Dialogs from "../Sidebar_components/Dialogs/Dialogs";
 import Profile from "../Sidebar_components/Own_profile/Profile";
+import DialogsContainer from "../Sidebar_components/Dialogs/DialogsContainer";
 
 const Content = (props) => {
         return (
             <div className={style.content}>
                 <Routes>
-                    <Route path='/profile' element={<Profile dispatch={props.dispatch} state={props.state}/>}/>
-                    <Route path='/dialogs/*' element={<Dialogs dispatch={props.dispatch} state={props.state}/>}/>
+                    <Route path='/profile' element={<Profile store={props.store}/>}/>
+                    <Route path='/dialogs/*' element={<DialogsContainer store={props.store}/>}/>
                 </Routes>
             </div>
     );

@@ -1,15 +1,13 @@
 import React from 'react';
 import style from './SendMessage.module.css'
-import {addMessageActionCreator, updateMessageActionCreator} from "../../../../Redux/Reducers/MessagesReducer";
-
 
 const SendMessage = (props) => {
     const addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.addMessage()
     }
     const updateText = (e) => {
         let text = e.target.value;
-        props.dispatch(updateMessageActionCreator(text))
+        props.updateText(text)
     }
     const keyPress = (e) => {
         if(e.keyCode === 13){

@@ -3,11 +3,11 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
 let initialState = {
     posts: [
-        {id: 1, body: "It is my first post!!!", likes: 101},
-        {id: 2,body: "It is my second post :)))))", likes: 98},
-        {id: 3,body: "It is my third post!!! ;))", likes: 87},
-        {id: 4,body: "Sad :(", likes: 91},
-        {id: 5,body: "Cucumber is so nice in my ass!", likes: 127000000000}
+        {id: 1, body: "It is my first post!!!", likes: 1010},
+        {id: 2,body: "It is my second post :)))))", likes: 9800},
+        {id: 3,body: "It is my third post!!! ;))", likes: 87000},
+        {id: 4,body: "Sad :(", likes: 910000},
+        {id: 5,body: "Cucumber is so nice in my ass!", likes: 9999999}
     ],
     newPostText: ''
 };
