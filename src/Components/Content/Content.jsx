@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './Content.module.css';
 import {Routes, Route } from "react-router-dom";
-import Dialogs from "../Sidebar_components/Dialogs/Dialogs";
 import Profile from "../Sidebar_components/Own_profile/Profile";
 import DialogsContainer from "../Sidebar_components/Dialogs/DialogsContainer";
 

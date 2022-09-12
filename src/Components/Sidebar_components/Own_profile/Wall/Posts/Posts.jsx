@@ -4,11 +4,11 @@ import Post from "./Post/Post";
 
 const Posts = (props) => {
     const addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost()
     }
     const updateText = (e) => {
         let text = e.target.value;
-        props.dispatch(updateTextActionCreator(text))
+        props.updateText(text)
     }
     const keyPress = (e) => {
         if(e.keyCode === 13){
@@ -24,7 +24,7 @@ const Posts = (props) => {
                     <input
                         onChange={updateText}
                         className={style.input}
-                        value={props.state.profilePage.newPostText}
+                        value={props.newPostText}
                         onKeyDown={keyPress}
                     />
                     <div className={style.btnWrap}>
@@ -33,7 +33,7 @@ const Posts = (props) => {
                 </div>
             </div>
             <div className={style.postsWrap}>
-                {props.state.profilePage.posts.map(p => <Post post={p}/>)}
+                {props.posts.map(p => <Post post={p}/>)}
             </div>
         </div>
     );

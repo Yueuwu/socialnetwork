@@ -4,7 +4,7 @@ import {addPostActionCreator, updateTextActionCreator} from "../../../../../Redu
 
 
 const PostsContainer = (props) => {
-    let newValue = props.store.getState().postsReducer.newPostText;
+    let newPostText = props.store.getState().postsReducer.newPostText;
     let posts = props.store.getState().postsReducer.posts
     const addPost = () => {
         props.store.dispatch(addPostActionCreator());
@@ -12,6 +12,6 @@ const PostsContainer = (props) => {
     const updateText = (text) => {
         props.store.dispatch(updateTextActionCreator(text))
     }
-    return (<Posts posts={posts} newValue={newValue} addPost={addPost} updateText={updateText}/>);
+    return (<Posts posts={posts} newPostText={newPostText} addPost={addPost} updateText={updateText}/>);
 };
 export default PostsContainer;
