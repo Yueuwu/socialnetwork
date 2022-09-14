@@ -20,18 +20,19 @@ const postsReducer = (state = initialState, action) => {
                 body: state.newPostText,
                 likes: 0
             };
-            let stateCopy = {...state}
-            stateCopy.posts = [...state.posts]
             if (newPost.body.trim() !== '') {
-                stateCopy.posts.unshift(newPost)
-                stateCopy.newPostText = ''
+                return {
+                    posts: [newPost, ...state.posts],
+                    newPostText: ''
+                }
             }
-            return stateCopy;
+            else return state;
         }
         case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = {...state}
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                newPostText: action.newText
+            }
         }
         default: return state
     }

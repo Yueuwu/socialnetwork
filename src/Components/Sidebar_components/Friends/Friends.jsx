@@ -9,7 +9,7 @@ const Friends = (props) => {
                 <h2>Friends</h2>
             </div>
             <div className={style.persons}>
-                {props.persons.map(e => <Friend/>)}
+                {props.persons.map(e => <Friend key={e.id}/>)}
             </div>
         </div>
     );

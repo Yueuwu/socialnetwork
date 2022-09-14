@@ -4,7 +4,7 @@ import Content from './Components/Content/Content'
 import SidebarContainer from "./Components/Sidebar/SidebarContainer";
 
 
-function App(props) {
+function App() {
     return (
           <div className="App">
                   <Content/>

@@ -7,7 +7,7 @@ const Profile = (props) => {
     return (
         <div className={style.wrapper}>
             <Myinfo/>
-            <Wall store={props.store} />
+            <Wall/>
         </div>
     );
 };

@@ -9,10 +9,10 @@ const Dialogs = (props) => {
     return (
         <div className={style.dialogs}>
             <div className={style.di}>
-                {props.dialogsData.map(el => <Dialog name={el.name} id={el.id}/>)}
+                {props.dialogsData.map(el => <Dialog name={el.name} id={el.id} key={el.id}/>)}
             </div>
             <div className={style.mes}>
-                {messages.map(m => <Message message={m.message}/>)}
+                {messages.map(m => <Message key={m.id} message={m.message}/>)}
             </div>
             <div className={style.send}>
                 <SendMessage updateText={props.updateText} addMessage={props.addMessage} newMessageText={props.newMessageText}/>
