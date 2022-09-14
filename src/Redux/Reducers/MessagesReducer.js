@@ -23,9 +23,9 @@ let initialState = {
 
 const messagesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
+        case ADD_MESSAGE: {
             let body = state.newMessageText;
-            if(body.trim() !== '') {
+            if (body.trim() !== '') {
                 state.messages.unshift({
                     id: Date.now(),
                     message: body
@@ -33,9 +33,11 @@ const messagesReducer = (state = initialState, action) => {
                 state.newMessageText = '';
             }
             return state;
-        case UPDATE_NEW_MESSAGE_TEXT:
+        }
+        case UPDATE_NEW_MESSAGE_TEXT: {
             state.newMessageText = action.newMessageText;
             return state;
+        }
         default: return state
     }
 }
