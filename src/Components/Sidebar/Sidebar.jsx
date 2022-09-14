@@ -13,8 +13,13 @@ const Sidebar = (props) => {
                     </Link>
                 </div>
                 <div className={style.el}>
-                    <Link className={style.el} to="/dialogs/">
+                    <Link className={style.el} to="/dialogs/"> {/*Here might be baga*/}
                         <img className={style.imgs} src="https://cdn-icons-png.flaticon.com/512/134/134808.png" alt=""/>
+                    </Link>
+                </div>
+                <div className={style.el}>
+                    <Link className={style.el} to="/users/"> {/*Here might be baga, if it will be, just delete splash */}
+                        <img className={style.imgs} src="https://cdn-icons-png.flaticon.com/512/694/694642.png" alt=""/>
                     </Link>
                 </div>
                 <div className={style.el}>

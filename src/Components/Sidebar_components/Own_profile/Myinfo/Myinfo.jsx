@@ -16,8 +16,8 @@ const Myinfo = () => {
                     </div>
                     <div className={style.int}>
                         <div className={style.intWrap}>
-                            <div>Interests:</div>
-                            <div className={style.intBody}>Programming, Reading, Hiking, English</div>
+                            <div>About me:</div>
+                            <div className={style.intBody}>I love programming</div>
                         </div>
                         <div className={style.intWrap}>
                             <div>Birthday:</div>
