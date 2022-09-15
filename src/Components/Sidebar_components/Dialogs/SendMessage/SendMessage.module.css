@@ -48,4 +48,5 @@
 }
 .btn:hover{
     background: linear-gradient(90deg, rgba(155,157,208,1) 0%, rgb(233, 233, 246) 100%);
+    cursor: pointer;
 }

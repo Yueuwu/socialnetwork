@@ -1,7 +1,8 @@
 import React from 'react';
+import style from './Users.module.css'
 
 const Users = (p) => {
-    if (p.users.length <= 5) {
+    if (p.users.length <= 4) {
         p.setUsers(
             [
                 {
@@ -16,13 +17,26 @@ const Users = (p) => {
         )
     }
     return (
-        <div>
-            { p.users.map(u => <div key={u.id}>
-                {u.name} {u.about}
-                <div>
-                    { u.followed ? <button onClick={() => p.unfollow(u.id)}>Unfollow</button> : <button onClick={() => p.follow(u.id)}>Follow</button>}
-                </div>
-            </div>) }
+        <div className={style.wrap}>
+            <div className={style.usrs}><h1>Users</h1></div>
+            <div className={style.usWrap}>
+                {p.users.map(u =>
+                    <div key={u.id} className={style.usr}>
+                        <div><img className={style.ava} src='https://cdn-icons-png.flaticon.com/512/2489/2489278.png' alt=''/></div>
+                        <div className={style.infoWrap}>
+                            <div className={style.name}>{u.name}</div>
+                            <div className={style.about}>About me: {u.about}</div>
+                            <div className={style.loca}>Location: {u.location.city}, {u.location.country}</div>
+                        </div>
+
+                        <div>
+                            {u.followed
+                                ? <button className={style.btn} onClick={() => p.unfollow(u.id)}>Unfollow</button>
+                                : <button className={style.btn} onClick={() => p.follow(u.id)}>Follow</button>}
+                        </div>
+
+                    </div>)}
+            </div>
         </div>
     );
 };
