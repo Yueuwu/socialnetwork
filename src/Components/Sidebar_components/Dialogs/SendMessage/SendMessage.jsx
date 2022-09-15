@@ -26,6 +26,7 @@ const SendMessage = (props) => {
                         onKeyDown={keyPress}
                     />
                 </div>
+                <p className={style.line}></p>
                 <button
                     className={style.btn}
                     onClick={addMessage}

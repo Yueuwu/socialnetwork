@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 .usrs{
     text-align: center;
@@ -20,15 +21,19 @@
     width: 60%;
     height: 100px;
     background-color: #9b9dd0;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     -moz-user-select: none;
     -o-user-select:none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+.info{
+    display: flex;
 }
 .ava{
     max-height: 100px;
@@ -37,7 +42,8 @@
     background-color: #E6E8F0;
 }
 .infoWrap{
-    width: 70%;
+    width: 90%;
+    overflow: auto;
 }
 .name{
     font-weight: 600;
@@ -55,7 +61,34 @@
     font-weight: 400;
     color: #3a3a3b;
 }
-.btn{
-    height: 100%;
+.btnWrap{
     width: 100%;
+    margin-top: -2px;
+}
+.btnUn{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9b9dd0;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    font-size: 15px;
+    color: #000000;
+    font-weight: 600;
+}
+.btnF{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6d6ddc;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 600;
+}
+.infoWrap::-webkit-scrollbar {
+    display: none;
 }
