@@ -24,9 +24,13 @@ const Users = (p) => {
                     <div className={style.usWrap}>
                         <div key={u.id} className={style.usr}>
 
+                            <div><img className={style.ava}
+                                      src='https://cdn-icons-png.flaticon.com/512/2489/2489278.png'
+                                      alt=''
+                                />
+                            </div>
+
                             <div className={style.info}>
-                                <div><img className={style.ava}
-                                          src='https://cdn-icons-png.flaticon.com/512/2489/2489278.png' alt=''/></div>
                                 <div className={style.infoWrap}>
                                     <div className={style.name}>{u.name}</div>
                                     <div className={style.about}>About me: {u.about}</div>
