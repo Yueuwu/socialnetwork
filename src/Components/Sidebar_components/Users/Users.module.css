@@ -2,11 +2,13 @@
     padding: 15px 10px;
 
 }
+.usrsWrap{
+
+}
 .usWrap{
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 .usrs{
     text-align: center;
@@ -18,7 +20,7 @@
     user-select: none;
 }
 .usr {
-    width: 60%;
+    width: 50%;
     height: 100px;
     background-color: #9b9dd0;
     margin-bottom: 60px;
@@ -28,7 +30,7 @@
     grid-auto-rows: minmax(100px, auto);
     grid-template-areas:
             "ava info info info info info info info info"
-            "ava btn btn btn btn btn btn btn btn"
+            "btn btn btn btn btn btn btn btn btn"
 ;
     -moz-user-select: none;
     -o-user-select:none;
@@ -39,12 +41,14 @@
 }
 .info{
     grid-area: info;
-    display: flex;
+}
+.avaWrap{
+    grid-area: ava;
 }
 .ava{
-    grid-area: ava;
-    max-height: 120px;
-    padding-right: 5px;
+    max-height: 95px;
+    border: 2px solid #b7b7d9;
+    border-radius: 50%;
     background-color: #E6E8F0;
 }
 .infoWrap{

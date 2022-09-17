@@ -4,10 +4,10 @@ const SET_USERS = 'SET_USERS'
 
 let initialState = {
     users: [
-        {id: 1, followed: true, name: 'Vera', about: 'I am a lash maker', location: { city: 'Quebec', country: 'Canada'}, photo: '' },
-        {id: 2, followed: false, name: 'Vladimir', about: 'I am a good guy', location: { city: 'Kiev', country: 'Ukraine'}, photo: '' },
-        {id: 3, followed: false, name: 'Vladimir', about: 'I am not a killer (lie)', location: { city: 'Moscow', country: 'Russia'}, photo: '' },
-        {id: 4, followed: false, name: 'Dmitry', about: 'Just better teacher', location: { city: 'Minsk', country: 'Belarus'}, photo: '' },
+        {id: 1, followed: true, name: 'Vera', status: 'I am a lash maker', location: { city: 'Quebec', country: 'Canada'}, photos: {small: 'https://sun9-53.userapi.com/impg/KVRBvCSLQQyT3rDAmrv4w-ZNuqC5Q_GfwlvyNg/_CJu3zmdMQg.jpg?size=1468x1600&quality=95&sign=c163bdddaad1c55312f90bb0fc1161d0&type=album'} },
+        {id: 2, followed: false, name: 'Vladimir', status: 'I am a good guy', location: { city: 'Kiev', country: 'Ukraine'}, photos: {small: null} },
+        {id: 3, followed: false, name: 'Vladimir', status: 'I am not a killer (lie)', location: { city: 'Moscow', country: 'Russia'}, photos: {small: null} },
+        {id: 4, followed: false, name: 'Dmitry', status: 'Just better teacher', location: { city: 'Minsk', country: 'Belarus'}, photos: {small: null} },
     ],
 }
 
