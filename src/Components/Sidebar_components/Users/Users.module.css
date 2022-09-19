@@ -103,3 +103,7 @@
 .infoWrap::-webkit-scrollbar {
     display: none;
 }
+.selected{
+    font-weight: 600;
+    font-size: 25px;
+}

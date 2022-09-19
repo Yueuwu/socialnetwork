@@ -1,14 +1,13 @@
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 
 let initialState = {
-    users: [
-        {id: 1, followed: true, name: 'Vera', status: 'I am a lash maker', location: { city: 'Quebec', country: 'Canada'}, photos: {small: 'https://sun9-53.userapi.com/impg/KVRBvCSLQQyT3rDAmrv4w-ZNuqC5Q_GfwlvyNg/_CJu3zmdMQg.jpg?size=1468x1600&quality=95&sign=c163bdddaad1c55312f90bb0fc1161d0&type=album'} },
-        {id: 2, followed: false, name: 'Vladimir', status: 'I am a good guy', location: { city: 'Kiev', country: 'Ukraine'}, photos: {small: null} },
-        {id: 3, followed: false, name: 'Vladimir', status: 'I am not a killer (lie)', location: { city: 'Moscow', country: 'Russia'}, photos: {small: null} },
-        {id: 4, followed: false, name: 'Dmitry', status: 'Just better teacher', location: { city: 'Minsk', country: 'Belarus'}, photos: {small: null} },
-    ],
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 100,
+    currentPage: 20
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -38,6 +37,11 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 users: [...state.users, ...action.fetchedUsers]
             }
+        case SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.currentPage
+            }
         default:
             return state
     }
@@ -46,5 +50,6 @@ const usersReducer = (state = initialState, action) => {
 export const followAC = (userId) => ({type: FOLLOW, userId: userId}) //here might be baga
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId: userId})
 export const setUsersAC = (fetchedUsers) => ({type: SET_USERS, fetchedUsers: fetchedUsers})
+export const setPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 
 export default usersReducer

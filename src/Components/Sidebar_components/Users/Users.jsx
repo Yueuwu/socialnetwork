@@ -5,7 +5,7 @@ import * as axios from "axios";
 class Users extends React.Component {
     componentDidMount() {
         axios
-            .get('https://social-network.samuraijs.com/api/1.0/users')
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
                 this.props.setUsers(
                     response.data.items
@@ -14,9 +14,19 @@ class Users extends React.Component {
     }
 
     render() {
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+        let pages = []
+        for (let i = 1; i <= pagesCount; i++){
+            pages.push(i)
+        }
         return (
             <div className={style.wrap}>
                 <div className={style.usrs}><h1>Users</h1></div>
+                <div>
+                    {pages.map(i =>
+                        <span onClick={() => this.props.setPage(i)} className={this.props.currentPage === i ? style.selected : null}>{i}</span>
+                    )}
+                </div>
                 <div className={style.usrsWrap}>
                     {this.props.users.map(u =>
                         <div className={style.usWrap}>
