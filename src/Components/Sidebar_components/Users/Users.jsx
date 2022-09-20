@@ -7,6 +7,15 @@ class Users extends React.Component {
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
             .then(response => {
+                this.props.setUsers(response.data.items)
+                this.props.setTotalCount(response.data.totalCount)
+            })
+    }
+    pageChanger = (i) => {
+        this.props.setPage(i)
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${i}&count=${this.props.pageSize}`)
+            .then(response => {
                 this.props.setUsers(
                     response.data.items
                 )
@@ -24,7 +33,7 @@ class Users extends React.Component {
                 <div className={style.usrs}><h1>Users</h1></div>
                 <div>
                     {pages.map(i =>
-                        <span onClick={() => this.props.setPage(i)} className={this.props.currentPage === i ? style.selected : null}>{i}</span>
+                        <span onClick={(e) => this.pageChanger(i)} className={this.props.currentPage === i ? style.selected : null}>{i}</span>
                     )}
                 </div>
                 <div className={style.usrsWrap}>
