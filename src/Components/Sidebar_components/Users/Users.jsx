@@ -1,43 +1,24 @@
 import React from 'react';
 import style from './Users.module.css'
-import * as axios from "axios";
 
-class Users extends React.Component {
-    componentDidMount() {
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.setUsers(response.data.items)
-                this.props.setTotalCount(response.data.totalCount)
-            })
+const Users = (props) => {
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    let pages = []
+    for (let i = 1; i <= pagesCount; i++){
+        pages.push(i)
     }
-    pageChanger = (i) => {
-        this.props.setPage(i)
-        axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${i}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.setUsers(
-                    response.data.items
-                )
-            })
-    }
-
-    render() {
-        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
-        let pages = []
-        for (let i = 1; i <= pagesCount; i++){
-            pages.push(i)
-        }
-        return (
+    return (
+        <>
             <div className={style.wrap}>
                 <div className={style.usrs}><h1>Users</h1></div>
                 <div>
                     {pages.map(i =>
-                        <span onClick={(e) => this.pageChanger(i)} className={this.props.currentPage === i ? style.selected : null}>{i}</span>
+                        <span onClick={(e) => props.pageChanger(i)}
+                              className={props.currentPage === i ? style.selected : null}>{i}</span>
                     )}
                 </div>
                 <div className={style.usrsWrap}>
-                    {this.props.users.map(u =>
+                    {props.users.map(u =>
                         <div className={style.usWrap}>
                             <div key={u.id} className={style.usr}>
 
@@ -51,26 +32,25 @@ class Users extends React.Component {
                                     <div className={style.infoWrap}>
                                         <div className={style.name}>{u.name}</div>
                                         <div className={style.about}>About me: {u.status}</div>
-                                        {/*<div className={style.loca}>Location: {u.location.city}, {u.location.country}</div>*/}
+                                            </div>
+                                            </div>
+
+                                            <div className={style.btnWrap}>
+                                        {u.followed
+                                            ? <button className={style.btnUn}
+                                            onClick={() => props.unfollow(u.id)}>Unfollow</button>
+                                            : <button className={style.btnF} onClick={() => props.follow(u.id)}>Follow</button>}
+                                            </div>
+
+                                            </div>
+
+                                            </div>
+                                            )}
                                     </div>
                                 </div>
 
-                                <div className={style.btnWrap}>
-                                    {u.followed
-                                        ? <button className={style.btnUn}
-                                                  onClick={() => this.props.unfollow(u.id)}>Unfollow</button>
-                                        : <button className={style.btnF} onClick={() => this.props.follow(u.id)}>Follow</button>}
-                                </div>
-
-                            </div>
-
-                        </div>
-                    )}
-                </div>
-            </div>
-        );
-
-    }
-}
+                            </>
+    );
+};
 
 export default Users;
